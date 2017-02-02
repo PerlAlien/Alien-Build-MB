@@ -13,13 +13,11 @@ $modules{$_} = $_ for qw(
   Alien::Build
   Capture::Tiny
   ExtUtils::MakeMaker
-  File::Temp
   File::chdir
   Module::Build
   Path::Tiny
   Test2::Suite
   Test::More
-  lib
 );
 
 
