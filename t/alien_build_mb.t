@@ -6,6 +6,8 @@ use File::chdir;
 use lib 'corpus/lib';
 use Capture::Tiny qw( capture_merged );
 
+delete $ENV{ALIEN_INSTALL_TYPE};
+
 @INC = map { ref($_) ? $_ : path($_)->absolute->stringify } @INC;
 
 sub alienfile
@@ -159,8 +161,8 @@ subtest 'system' => sub {
     is(
     $abmb->configure_requires,
       hash {
-       field 'Module::Build' => T();
-       field 'Alien::Build::MB' => T();
+        field 'Module::Build' => T();
+        field 'Alien::Build::MB' => T();
         field 'Foo' => '2.01';
         etc;
       },
