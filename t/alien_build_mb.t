@@ -6,7 +6,7 @@ use File::chdir;
 use lib 'corpus/lib';
 use Capture::Tiny qw( capture_merged );
 
-@INC = map { ref ? $_ : path($_)->absolute->stringify } @INC;
+@INC = map { ref($_) ? $_ : path($_)->absolute->stringify } @INC;
 
 sub alienfile
 {
