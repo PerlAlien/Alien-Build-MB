@@ -17,3 +17,7 @@ perl:
 
 script:
   - dzil test -v
+
+env:
+  global:
+    - PERL_CPANM_OPT='--mirror https://cpan.metacpan.org/ --mirror-only'
