@@ -109,7 +109,7 @@ sub new
 
 Returns a freshly deserialized instance of L<Alien::Build>.  If you make
 any changes to this object's C<install_prop> or C<runtime_prop> properties
-be sure that you also call C<$build->checkpoint>!
+be sure that you also call C<< $build->checkpoint >>!
 
 =cut
 

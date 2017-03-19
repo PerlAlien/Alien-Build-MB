@@ -40,7 +40,7 @@ Takes the usual [Module::Build](https://metacpan.org/pod/Module::Build) argument
 
 Returns a freshly deserialized instance of [Alien::Build](https://metacpan.org/pod/Alien::Build).  If you make
 any changes to this object's `install_prop` or `runtime_prop` properties
-be sure that you also call `$build-`checkpoint>!
+be sure that you also call `$build->checkpoint`!
 
 # ACTIONS
 
