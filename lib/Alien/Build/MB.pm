@@ -63,6 +63,7 @@ sub new
 
   $self->_add_prereq( "${_}_requires", 'Module::Build'    => '0.36' ) for qw( configure build );
   $self->_add_prereq( "${_}_requires", 'Alien::Build::MB' => '0.01' ) for qw( configure build );
+  $self->add_to_cleanup("_alien");
 
   my %config_requires = %{ $build->requires('configure') };
   foreach my $module (keys %config_requires)
@@ -179,14 +180,12 @@ sub ACTION_alien_build
   my $build = $self->alien_build;
   $build->build;
   
-  if($build->install_prop->{arch})
+  if($build->meta_prop->{arch})
   {
-    # TODO
-    # my $distname = ...
-    # my $archdir = Path::Tiny->new("./blib/auto/arch/@{[ join '/', split /-/, $distname ]}");
-    # $archdir->mkpath;
-    # $archfile-> $archdir->child($archdir->basename . ".txt");
-    # $archfile->spew('Alien based distribution with architecture specific file in share');
+    my $archdir = Path::Tiny->new("./blib/arch/auto/@{[ join '/', split /-/, $self->dist_name ]}");
+    $archdir->mkpath;
+    my $archfile = $archdir->child($archdir->basename . ".txt");
+    $archfile->spew('Alien based distribution with architecture specific file in share');
   }
   
   $build->checkpoint;
