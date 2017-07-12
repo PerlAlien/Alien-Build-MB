@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Set perl_module_version runtime property
 
 0.02      2017-03-29 14:29:08 -0400
   - Respect meta->{arch}

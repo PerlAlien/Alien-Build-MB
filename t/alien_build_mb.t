@@ -74,6 +74,7 @@ subtest 'share' => sub {
   
     is($build->runtime_prop->{install_type}, 'share', 'type = share');
     is($build->runtime_prop->{prefix}, T(), "runtime prefix");
+    is($build->runtime_prop->{perl_module_version}, '1.00', 'perl_module_version is set');
     note $build->runtime_prop->{prefix};
   
     my $stage = path($build->install_prop->{stage})->relative($CWD);

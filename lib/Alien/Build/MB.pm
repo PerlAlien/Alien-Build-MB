@@ -96,6 +96,7 @@ sub new
   
   $build->set_stage ($stage->stringify );
   $build->set_prefix($prefix->stringify);
+  $build->runtime_prop->{perl_module_version} = $self->dist_version;
   
   $build->checkpoint;
 
