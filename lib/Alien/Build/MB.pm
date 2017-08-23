@@ -100,8 +100,35 @@ sub new
   
   $build->checkpoint;
 
+  if($self->alien_alienfile_meta)
+  {
+    $self->meta_merge->{x_alienfile} = {
+      generated_by => "@{[ __PACKAGE__ ]} version @{[ __PACKAGE__->VERSION || 'dev' ]}",
+      requires => {
+        map {
+          my %reqs = %{ $build->requires($_) };
+          $reqs{$_} = "$reqs{$_}" for keys %reqs;
+          $_ => \%reqs;
+        } qw( share system )
+      },
+    };
+  }
+
   $self;
 }
+
+=head1 PROPERTIES
+
+All L<Alien::Build::MB> specific properties have a C<alien_> prefix.
+
+=head2 alien_alienfile_meta
+
+If true (the default), then extra meta will be stored in C<x_alienfile> which includes
+the C<share> and C<system> prereqs.
+
+=cut
+
+__PACKAGE__->add_property( alien_alienfile_meta => 1 );
 
 =head1 METHODS
 

@@ -32,6 +32,15 @@ installer for you!
 
 Takes the usual [Module::Build](https://metacpan.org/pod/Module::Build) arguments.
 
+# PROPERTIES
+
+All [Alien::Build::MB](https://metacpan.org/pod/Alien::Build::MB) specific properties have a `alien_` prefix.
+
+## alien\_alienfile\_meta
+
+If true (the default), then extra meta will be stored in `x_alienfile` which includes
+the `share` and `system` prereqs.
+
 # METHODS
 
 ## alien\_build
