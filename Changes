@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Add alien_test target
 
 0.04      2017-08-23 17:01:53 -0400
   - set x_alienfile meta unless alien_alienfile_meta is false

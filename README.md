@@ -69,6 +69,12 @@ not do anything.
 
 Build the package from source.
 
+## ACTION\_alien\_test
+
+    ./Build alien_test
+
+Run the package tests, if there are any.
+
 # SEE ALSO
 
 [Alien::Build](https://metacpan.org/pod/Alien::Build), [Alien::Build::MM](https://metacpan.org/pod/Alien::Build::MM), [Alien::Base::ModuleBuild](https://metacpan.org/pod/Alien::Base::ModuleBuild)

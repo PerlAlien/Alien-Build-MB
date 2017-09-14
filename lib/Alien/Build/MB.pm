@@ -65,6 +65,15 @@ sub new
   $self->_add_prereq( "${_}_requires", 'Alien::Build::MB' => '0.01' ) for qw( configure build );
   $self->add_to_cleanup("_alien");
 
+  foreach my $hook_name (qw( test_ffi test_share test_system ))
+  {
+    if($build->meta->has_hook($hook_name))
+    {
+      $self->_add_prereq( "configure_requires", 'Alien::Build::MB' => '0.05');
+      last;
+    }
+  }
+
   my %config_requires = %{ $build->requires('configure') };
   foreach my $module (keys %config_requires)
   {
@@ -220,6 +229,35 @@ sub ACTION_alien_build
   
   _alien_touch 'build';
   $self;
+}
+
+=head2 ACTION_alien_test
+
+ ./Build alien_test
+
+Run the package tests, if there are any.
+
+=cut
+
+sub ACTION_alien_test
+{
+  my($self) = @_;
+  $self->depends_on('alien_build');
+  
+  my $build = $self->alien_build;
+  if($build->can('test'))
+  {
+    $build->test;
+    $build->checkpoint;
+  }
+  $self;  
+}
+
+sub ACTION_test
+{
+  my($self) = @_;
+  $self->depends_on('alien_test');
+  $self->SUPER::ACTION_test;
 }
 
 sub ACTION_code
