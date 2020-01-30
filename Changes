@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.06      2020-01-30 14:28:54 -0700
   - Bump requirement of Module::Build to 0.37_01 as we need
     that for the dynamic_config property (gh#3)
 
