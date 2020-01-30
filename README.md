@@ -1,4 +1,4 @@
-# Alien::Build::MB [![Build Status](https://secure.travis-ci.org/plicease/Alien-Build-MB.png)](http://travis-ci.org/plicease/Alien-Build-MB)
+# Alien::Build::MB [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-Build-MB.png)](http://travis-ci.org/Perl5-Alien/Alien-Build-MB)
 
 Alien::Build installer class for Module::Build
 
@@ -6,12 +6,14 @@ Alien::Build installer class for Module::Build
 
 In your Build.PL:
 
-    use Alien::Build::MB;
-    
-    Alien::Build::MB->new(
-      module_name => 'Alien::MyLibrary',
-      ...
-    );
+```perl
+use Alien::Build::MB;
+
+Alien::Build::MB->new(
+  module_name => 'Alien::MyLibrary',
+  ...
+);
+```
 
 # DESCRIPTION
 
@@ -28,7 +30,9 @@ installer for you!
 
 ## new
 
-    my $abmb = Alien::Build::MB->new(%args);
+```perl
+my $abmb = Alien::Build::MB->new(%args);
+```
 
 Takes the usual [Module::Build](https://metacpan.org/pod/Module::Build) arguments.
 
@@ -45,7 +49,9 @@ the `share` and `system` prereqs.
 
 ## alien\_build
 
-    my $build = $abmb->alien_build;
+```perl
+my $build = $abmb->alien_build;
+```
 
 Returns a freshly deserialized instance of [Alien::Build](https://metacpan.org/pod/Alien::Build).  If you make
 any changes to this object's `install_prop` or `runtime_prop` properties
@@ -58,20 +64,26 @@ process.  For debugging you may want to call them separately.
 
 ## ACTION\_alien\_download
 
-    ./Build alien_download
+```
+./Build alien_download
+```
 
 Downloads the package from the internet.  For a system install this does
 not do anything.
 
 ## ACTION\_alien\_build
 
-    ./Build alien_build
+```
+./Build alien_build
+```
 
 Build the package from source.
 
 ## ACTION\_alien\_test
 
-    ./Build alien_test
+```
+./Build alien_test
+```
 
 Run the package tests, if there are any.
 
