@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Bump requirement of Module::Build to 0.37_01 as we need
+    that for the dynamic_config property (gh#3)
 
 0.05      2017-09-14 16:35:04 -0400
   - Add alien_test target
