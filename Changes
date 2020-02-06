@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Generate ::Install::Files module like Alien::Build::MM
+    and Alien::Base::ModuleBuild do (gh#4, gh#6)
   - Bump requirement of Module::Build to 0.37_01 as we need
     that for the dynamic_config property (gh#3)
 
