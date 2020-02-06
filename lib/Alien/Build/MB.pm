@@ -225,6 +225,21 @@ sub ACTION_alien_build
     $archfile->spew('Alien based distribution with architecture specific file in share');
   }
 
+  {
+    my @parts = split /-/, $self->dist_name;
+    my $package = join '::', @parts;
+    my $install_files = Path::Tiny->new("./blib/lib")->child( @parts, 'Install', 'Files.pm' );
+    $install_files->parent->mkpath;
+    $install_files->spew_utf8(
+      "package ${package}::Install::Files;\n",
+      "use strict;\n",
+      "use warnings;\n",
+      "require ${package};\n",
+      "sub Inline { shift; ${package}->Inline(\@_) }\n",
+      "1;\n",
+    );
+  };
+
   $build->checkpoint;
 
   _alien_touch 'build';
