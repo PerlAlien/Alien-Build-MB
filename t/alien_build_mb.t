@@ -123,7 +123,32 @@ subtest 'share' => sub {
   subtest 'build' => sub {
     note scalar capture_merged { $abmb->ACTION_alien_build };
     my $build = $abmb->alien_build(1);
-    is($build->install_prop->{did_the_install}, T());
+    is $build->install_prop->{did_the_install}, T();
+    ok -f "blib/lib/Alien/Foo/Install/Files.pm", "created Alien::Foo::Install::Files";
+
+    local $INC{'Alien/Foo.pm'} = __FILE__;
+
+    eval { require './blib/lib/Alien/Foo/Install/Files.pm' };
+    is "$@", "", "Alien::Foo::Install::Files compiles okay";
+
+    my $mock = mock 'Alien::Foo' => (
+      add => [
+        Inline => sub {
+          { x => 'y', args => [@_] };
+        },
+      ],
+    );
+
+    is(
+      Alien::Foo::Install::Files->Inline(1,2,3,4,5,6),
+      hash {
+        field x => 'y';
+        field args => [ 'Alien::Foo', 1,2,3,4,5,6 ];
+        end;
+      },
+      'called Alien::Foo->Inline',
+    );
+
   };
 
 };
