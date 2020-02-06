@@ -1,4 +1,4 @@
-# Alien::Build::MB [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-Build-MB.png)](http://travis-ci.org/Perl5-Alien/Alien-Build-MB)
+# Alien::Build::MB [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-Build-MB.png)](http://travis-ci.org/Perl5-Alien/Alien-Build-MB) ![windows](https://github.com/Perl5-Alien/Alien-Build-MB/workflows/windows/badge.svg) ![macos](https://github.com/Perl5-Alien/Alien-Build-MB/workflows/macos/badge.svg)
 
 Alien::Build installer class for Module::Build
 
@@ -23,7 +23,7 @@ help create [Alien](https://metacpan.org/pod/Alien) distributions.  The author r
 The primary rationale for this class, is to prove independence
 from any particular installer, so that other installers may be
 added in the future if they become available.  If you really do
-prefer to work with [Module::Build](https://metacpan.org/pod/Module::Build) though, this may be the 
+prefer to work with [Module::Build](https://metacpan.org/pod/Module::Build) though, this may be the
 installer for you!
 
 # CONSTRUCTOR
