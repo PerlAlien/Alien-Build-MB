@@ -1,4 +1,4 @@
-# Alien::Build::MB [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-Build-MB.png)](http://travis-ci.org/Perl5-Alien/Alien-Build-MB) ![windows](https://github.com/Perl5-Alien/Alien-Build-MB/workflows/windows/badge.svg) ![macos](https://github.com/Perl5-Alien/Alien-Build-MB/workflows/macos/badge.svg)
+# Alien::Build::MB [![Build Status](https://travis-ci.org/PerlAlien/Alien-Build-MB.svg)](http://travis-ci.org/PerlAlien/Alien-Build-MB) ![windows](https://github.com/PerlAlien/Alien-Build-MB/workflows/windows/badge.svg) ![macos](https://github.com/PerlAlien/Alien-Build-MB/workflows/macos/badge.svg)
 
 Alien::Build installer class for Module::Build
 
