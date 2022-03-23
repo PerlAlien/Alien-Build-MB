@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.08      2022-03-23 12:29:50 -0600
   - Generated ::Install::Files POD missing pod coverage
     exception (gh#7, gh#14)
 
