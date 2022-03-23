@@ -1,4 +1,4 @@
-# Alien::Build::MB ![linux](https://github.com/PerlAlien/Alien-Build-MB/workflows/linux/badge.svg) ![windows](https://github.com/PerlAlien/Alien-Build-MB/workflows/windows/badge.svg) ![macos](https://github.com/PerlAlien/Alien-Build-MB/workflows/macos/badge.svg)
+# Alien::Build::MB ![static](https://github.com/PerlAlien/Alien-Build-MB/workflows/static/badge.svg) ![linux](https://github.com/PerlAlien/Alien-Build-MB/workflows/linux/badge.svg) ![windows](https://github.com/PerlAlien/Alien-Build-MB/workflows/windows/badge.svg) ![macos](https://github.com/PerlAlien/Alien-Build-MB/workflows/macos/badge.svg)
 
 Alien::Build installer class for Module::Build
 
