@@ -237,6 +237,12 @@ sub ACTION_alien_build
       "require ${package};\n",
       "sub Inline { shift; ${package}->Inline(\@_) }\n",
       "1;\n",
+      "\n",
+      "=begin Pod::Coverage\n",
+      "\n",
+      "  Inline\n",
+      "\n",
+      "=cut\n",
     );
   };
 
